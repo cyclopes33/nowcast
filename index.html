@@ -1,538 +1,1265 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>StormCast India | Convective Nowcasting</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css" />
+    <title>StormCast India | Convective Nowcasting System</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="logo">
-        <div class="logo-icon">⚡</div>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-        <div>
-          <h2>StormCast <span>India</span></h2>
-          <p>CONVECTIVE NOWCASTING SYSTEM</p>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+            <div class="brand-mark">SC</div>
+
+            <div>
+                <h1>StormCast India</h1>
+                <span>CONVECTIVE NOWCASTING SYSTEM</span>
+            </div>
         </div>
-      </div>
 
-      <div class="nav-right">
-        <div class="live-status">
-          <span></span>
-          LIVE SYSTEM
+        <div class="system-status">
+            <div class="status-indicator">
+                <span></span>
+                SYSTEM LIVE
+            </div>
+
+            <div class="clock" id="currentTime">
+                --:--:--
+            </div>
         </div>
 
-        <div class="time" id="currentTime">11:42:18 AM</div>
-      </div>
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                AI-POWERED WEATHER INTELLIGENCE
+            </span>
+
+            <h2>
+                Convective Storm
+                <span>Nowcasting</span>
+            </h2>
+
+            <p>
+                Short-term prediction of thunderstorms, hail, cloudbursts
+                and extreme rainfall across India.
+            </p>
+
+            <div class="hero-location">
+                <span class="location-dot"></span>
+                Monitoring Region: Bengaluru, Karnataka
+            </div>
+
+        </div>
+
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div>
-          <p class="eyebrow">AI-POWERED WEATHER INTELLIGENCE</p>
 
-          <h1>
-            Convective Storm<br />
-            <span>Nowcasting</span>
-          </h1>
+    <!-- =====================================================
+         TOP STATISTICS
+    ====================================================== -->
 
-          <p class="hero-text">
-            High-resolution prediction of thunderstorms, hail, cloudbursts and
-            extreme rainfall up to 6 hours ahead.
-          </p>
-        </div>
-
-        <div class="location-box">
-          <p>MONITORING REGION</p>
-
-          <h3>📍 Bengaluru, Karnataka</h3>
-
-          <small> Updated 20 Sep 2026 • 11:42 AM IST </small>
-        </div>
-      </section>
-
-      <!-- TOP STATS -->
-      <section class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon rain">🌧️</div>
-
-          <div>
-            <p>RAINFALL INTENSITY</p>
-            <h2>42.8 <span>mm/hr</span></h2>
-            <small class="danger-text">↑ 18% from previous hour</small>
-          </div>
-        </div>
+    <section class="stats-grid">
 
         <div class="stat-card">
-          <div class="stat-icon wind">💨</div>
 
-          <div>
-            <p>WIND SPEED</p>
-            <h2>48 <span>km/h</span></h2>
-            <small>Gusts up to 61 km/h</small>
-          </div>
+            <span class="stat-label">
+                RAINFALL INTENSITY
+            </span>
+
+            <h2>
+                42.8
+                <span>mm/hr</span>
+            </h2>
+
+            <div class="stat-status danger">
+                HIGH
+            </div>
+
         </div>
+
 
         <div class="stat-card">
-          <div class="stat-icon temp">🌡️</div>
 
-          <div>
-            <p>TEMPERATURE</p>
-            <h2>27.4 <span>°C</span></h2>
-            <small>Humidity: 84%</small>
-          </div>
+            <span class="stat-label">
+                WIND SPEED
+            </span>
+
+            <h2>
+                48
+                <span>km/h</span>
+            </h2>
+
+            <div class="stat-status warning">
+                MODERATE
+            </div>
+
         </div>
 
-        <div class="stat-card risk-card">
-          <div class="stat-icon risk">⚠️</div>
 
-          <div>
-            <p>OVERALL RISK</p>
-            <h2 class="high">HIGH</h2>
-            <small>Severe weather detected</small>
-          </div>
+        <div class="stat-card">
+
+            <span class="stat-label">
+                TEMPERATURE
+            </span>
+
+            <h2>
+                24.6
+                <span>°C</span>
+            </h2>
+
+            <div class="stat-status">
+                STABLE
+            </div>
+
         </div>
-      </section>
 
-      <!-- MAP SECTION -->
-      <section class="main-grid">
-        <div class="panel map-panel">
-          <div class="panel-header">
+
+        <div class="stat-card">
+
+            <span class="stat-label">
+                OVERALL RISK
+            </span>
+
+            <h2>
+                SEVERE
+            </h2>
+
+            <div class="stat-status danger">
+                ACTIVE
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HAZARD INTELLIGENCE MAP
+    ====================================================== -->
+
+    <section class="hazard-map-section">
+
+        <div class="section-heading">
+
             <div>
-              <p class="panel-label">REAL-TIME MONITORING</p>
-              <h2>Weather Activity Map</h2>
+
+                <span class="section-label">
+                    REAL-TIME MONITORING
+                </span>
+
+                <h2>
+                    Hazard Intelligence Map
+                </h2>
+
+                <p>
+                    Spatial distribution of active and predicted convective hazards.
+                </p>
+
             </div>
 
-            <div class="map-controls">
-              <button class="active">RADAR</button>
-              <button>SATELLITE</button>
-              <button>RISK</button>
+
+            <div class="hazard-controls">
+
+                <button class="active" data-layer="weather">
+                    WEATHER
+                </button>
+
+                <button data-layer="thunderstorm">
+                    THUNDERSTORM
+                </button>
+
+                <button data-layer="hail">
+                    HAIL
+                </button>
+
+                <button data-layer="cloudburst">
+                    CLOUDBURST
+                </button>
+
+                <button data-layer="downburst">
+                    DOWNBURST
+                </button>
+
             </div>
-          </div>
 
-          <!-- SIMULATED MAP -->
+        </div>
 
-          <div class="weather-map">
+
+        <div class="hazard-map">
+
             <div class="map-grid"></div>
 
-            <div class="india-outline">INDIA</div>
+            <div class="map-region">
 
-            <div class="storm storm-1"></div>
-            <div class="storm storm-2"></div>
-            <div class="storm storm-3"></div>
+                <span class="region-label region-north">
+                    NORTH
+                </span>
 
-            <div class="location-marker marker-1">
-              <span></span>
-              Bengaluru
+                <span class="region-label region-south">
+                    SOUTH
+                </span>
+
+                <span class="region-label region-west">
+                    WEST
+                </span>
+
+                <span class="region-label region-east">
+                    EAST
+                </span>
+
             </div>
 
-            <div class="location-marker marker-2">
-              <span></span>
-              Mysuru
+
+            <!-- Simulated Hazard Cells -->
+
+            <div class="hazard-cell cell-1"></div>
+            <div class="hazard-cell cell-2"></div>
+            <div class="hazard-cell cell-3"></div>
+            <div class="hazard-cell cell-4"></div>
+            <div class="hazard-cell cell-5"></div>
+
+
+            <!-- Bengaluru -->
+
+            <div class="map-location bengaluru">
+
+                <span></span>
+
+                <div>
+                    <strong>Bengaluru</strong>
+                    <small>SEVERE</small>
+                </div>
+
             </div>
 
-            <div class="location-marker marker-3">
-              <span></span>
-              Tumakuru
+
+            <!-- Mysuru -->
+
+            <div class="map-location mysuru">
+
+                <span></span>
+
+                <div>
+                    <strong>Mysuru</strong>
+                    <small>MODERATE</small>
+                </div>
+
             </div>
+
+
+            <!-- Tumakuru -->
+
+            <div class="map-location tumakuru">
+
+                <span></span>
+
+                <div>
+                    <strong>Tumakuru</strong>
+                    <small>HIGH</small>
+                </div>
+
+            </div>
+
+
+            <!-- Map Information -->
+
+            <div class="map-info">
+
+                <div>
+                    <span class="map-info-label">
+                        ACTIVE LAYER
+                    </span>
+
+                    <strong id="activeLayer">
+                        WEATHER
+                    </strong>
+                </div>
+
+                <div>
+                    <span class="map-info-label">
+                        UPDATE
+                    </span>
+
+                    <strong>
+                        LIVE
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- Legend -->
 
             <div class="map-legend">
-              <div>
-                <span class="legend low"></span>
-                Low
-              </div>
 
-              <div>
-                <span class="legend medium"></span>
-                Moderate
-              </div>
+                <div>
+                    <span class="legend-dot low"></span>
+                    LOW
+                </div>
 
-              <div>
-                <span class="legend high"></span>
-                Severe
-              </div>
+                <div>
+                    <span class="legend-dot moderate"></span>
+                    MODERATE
+                </div>
+
+                <div>
+                    <span class="legend-dot severe"></span>
+                    SEVERE
+                </div>
+
             </div>
-          </div>
+
         </div>
 
-        <!-- ALERT PANEL -->
+    </section>
 
-        <div class="panel alert-panel">
-          <div class="panel-header">
-            <div>
-              <p class="panel-label">EARLY WARNING</p>
-              <h2>Active Alerts</h2>
-            </div>
 
-            <div class="alert-count">3</div>
-          </div>
+    <!-- =====================================================
+         LIVE EVENT MONITORING
+    ====================================================== -->
 
-          <div class="alert">
-            <div class="alert-symbol">⚡</div>
+    <section class="event-monitoring">
+
+        <div class="section-heading">
 
             <div>
-              <h3>Severe Thunderstorm</h3>
 
-              <p>Strong convective activity detected near Bengaluru.</p>
+                <span class="section-label">
+                    ACTIVE EVENT
+                </span>
 
-              <small> Expected within 45 minutes </small>
+                <h2>
+                    Live Event Monitoring
+                </h2>
+
+                <p>
+                    Track the evolution of an active convective weather event.
+                </p>
+
             </div>
-          </div>
 
-          <div class="alert">
-            <div class="alert-symbol">🌧️</div>
+
+            <div class="live-indicator">
+
+                <span></span>
+                LIVE
+
+            </div>
+
+        </div>
+
+
+        <div class="event-dashboard">
+
+
+            <!-- Event Information -->
+
+            <div class="event-info">
+
+                <div class="event-header">
+
+                    <div>
+
+                        <span class="event-type">
+                            SEVERE THUNDERSTORM
+                        </span>
+
+                        <h3>
+                            Bengaluru, Karnataka
+                        </h3>
+
+                    </div>
+
+                    <div class="risk-badge">
+                        SEVERE
+                    </div>
+
+                </div>
+
+
+                <!-- Event Duration -->
+
+                <div class="event-time">
+
+                    <span class="time-label">
+                        EVENT DURATION
+                    </span>
+
+                    <div
+                        id="eventDuration"
+                        class="duration"
+                    >
+                        00:41:32
+                    </div>
+
+                    <span class="duration-status">
+                        Event currently active
+                    </span>
+
+                </div>
+
+
+                <!-- Event Timeline -->
+
+                <div class="event-timeline">
+
+                    <div class="timeline-labels">
+
+                        <span>
+                            11:18 AM
+                        </span>
+
+                        <span>
+                            NOW
+                        </span>
+
+                        <span>
+                            ~1:30 PM
+                        </span>
+
+                    </div>
+
+
+                    <!-- IMPORTANT:
+                         Unique class prevents collision
+                         with the 6-hour nowcast timeline.
+                    -->
+
+                    <div class="event-duration-timeline">
+
+                        <div class="timeline-track"></div>
+
+                        <div class="timeline-progress"></div>
+
+                        <div class="timeline-point start"></div>
+
+                        <div class="timeline-point current"></div>
+
+                        <div class="timeline-point forecast"></div>
+
+                    </div>
+
+
+                    <div class="timeline-description">
+
+                        <span>
+                            Detected
+                        </span>
+
+                        <span>
+                            Current
+                        </span>
+
+                        <span>
+                            Forecast End
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event Metrics -->
+
+            <div class="event-metrics">
+
+                <div class="event-metric">
+
+                    <span>
+                        RAINFALL INTENSITY
+                    </span>
+
+                    <div class="metric-value">
+                        42.8
+                        <small>mm/hr</small>
+                    </div>
+
+                    <div class="metric-status severe">
+                        HIGH
+                    </div>
+
+                </div>
+
+
+                <div class="event-metric">
+
+                    <span>
+                        WIND SPEED
+                    </span>
+
+                    <div class="metric-value">
+                        48
+                        <small>km/h</small>
+                    </div>
+
+                    <div class="metric-status moderate">
+                        MODERATE
+                    </div>
+
+                </div>
+
+
+                <div class="event-metric">
+
+                    <span>
+                        TEMPERATURE
+                    </span>
+
+                    <div class="metric-value">
+                        24.6
+                        <small>°C</small>
+                    </div>
+
+                    <div class="metric-status">
+                        STABLE
+                    </div>
+
+                </div>
+
+
+                <div class="event-metric">
+
+                    <span>
+                        CONFIDENCE
+                    </span>
+
+                    <div class="metric-value">
+                        87
+                        <small>%</small>
+                    </div>
+
+                    <div class="confidence-bar">
+                        <div></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6-Hour Hazard Outlook -->
+
+        <div class="outlook">
+
+            <div class="outlook-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PREDICTION WINDOW
+                    </span>
+
+                    <h3>
+                        6-Hour Hazard Outlook
+                    </h3>
+
+                </div>
+
+                <span class="outlook-location">
+                    Bengaluru Region
+                </span>
+
+            </div>
+
+
+            <div class="outlook-grid">
+
+
+                <div class="outlook-hour active">
+
+                    <span class="hour">
+                        NOW
+                    </span>
+
+                    <div class="hazard-dot severe-dot"></div>
+
+                    <strong>
+                        SEVERE
+                    </strong>
+
+                    <small>
+                        42.8 mm/hr
+                    </small>
+
+                </div>
+
+
+                <div class="outlook-hour">
+
+                    <span class="hour">
+                        +1H
+                    </span>
+
+                    <div class="hazard-dot severe-dot"></div>
+
+                    <strong>
+                        SEVERE
+                    </strong>
+
+                    <small>
+                        38.2 mm/hr
+                    </small>
+
+                </div>
+
+
+                <div class="outlook-hour">
+
+                    <span class="hour">
+                        +2H
+                    </span>
+
+                    <div class="hazard-dot moderate-dot"></div>
+
+                    <strong>
+                        MODERATE
+                    </strong>
+
+                    <small>
+                        27.5 mm/hr
+                    </small>
+
+                </div>
+
+
+                <div class="outlook-hour">
+
+                    <span class="hour">
+                        +3H
+                    </span>
+
+                    <div class="hazard-dot moderate-dot"></div>
+
+                    <strong>
+                        MODERATE
+                    </strong>
+
+                    <small>
+                        19.4 mm/hr
+                    </small>
+
+                </div>
+
+
+                <div class="outlook-hour">
+
+                    <span class="hour">
+                        +4H
+                    </span>
+
+                    <div class="hazard-dot low-dot"></div>
+
+                    <strong>
+                        LOW
+                    </strong>
+
+                    <small>
+                        11.2 mm/hr
+                    </small>
+
+                </div>
+
+
+                <div class="outlook-hour">
+
+                    <span class="hour">
+                        +6H
+                    </span>
+
+                    <div class="hazard-dot low-dot"></div>
+
+                    <strong>
+                        LOW
+                    </strong>
+
+                    <small>
+                        6.8 mm/hr
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACTIVE ALERTS
+    ====================================================== -->
+
+    <section class="alerts-section">
+
+        <div class="section-heading">
 
             <div>
-              <h3>Extreme Rainfall</h3>
 
-              <p>Heavy precipitation cell moving towards the city.</p>
+                <span class="section-label">
+                    WARNING SYSTEM
+                </span>
 
-              <small> Expected within 1–2 hours </small>
+                <h2>
+                    Active Alerts
+                </h2>
+
             </div>
-          </div>
 
-          <div class="alert">
-            <div class="alert-symbol">💨</div>
+            <span class="alert-count">
+                03 ACTIVE
+            </span>
+
+        </div>
+
+
+        <div class="alerts-grid">
+
+
+            <div class="alert-card severe-alert">
+
+                <div class="alert-icon">
+                    !
+                </div>
+
+                <div class="alert-content">
+
+                    <span>
+                        SEVERE THUNDERSTORM
+                    </span>
+
+                    <h3>
+                        Bengaluru Urban
+                    </h3>
+
+                    <p>
+                        Strong convective activity detected.
+                        Heavy rainfall and gusty winds possible.
+                    </p>
+
+                </div>
+
+                <div class="alert-time">
+                    NOW
+                </div>
+
+            </div>
+
+
+            <div class="alert-card warning-alert">
+
+                <div class="alert-icon">
+                    !
+                </div>
+
+                <div class="alert-content">
+
+                    <span>
+                        HEAVY RAINFALL
+                    </span>
+
+                    <h3>
+                        Mysuru Region
+                    </h3>
+
+                    <p>
+                        High rainfall intensity expected
+                        during the next 2 hours.
+                    </p>
+
+                </div>
+
+                <div class="alert-time">
+                    +1H
+                </div>
+
+            </div>
+
+
+            <div class="alert-card moderate-alert">
+
+                <div class="alert-icon">
+                    !
+                </div>
+
+                <div class="alert-content">
+
+                    <span>
+                        WIND HAZARD
+                    </span>
+
+                    <h3>
+                        Tumakuru
+                    </h3>
+
+                    <p>
+                        Localized strong wind gusts
+                        may accompany thunderstorms.
+                    </p>
+
+                </div>
+
+                <div class="alert-time">
+                    +2H
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         6-HOUR CONVECTIVE NOWCAST
+    ====================================================== -->
+
+    <section class="nowcast-section">
+
+        <div class="section-heading">
 
             <div>
-              <h3>Strong Wind Gusts</h3>
 
-              <p>Wind speeds may exceed 60 km/h during storm passage.</p>
+                <span class="section-label">
+                    SHORT-TERM FORECAST
+                </span>
 
-              <small> Moderate confidence </small>
+                <h2>
+                    6-Hour Convective Nowcast
+                </h2>
+
+                <p>
+                    Predicted evolution of convective activity.
+                </p>
+
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- NOWCAST -->
-      <section class="panel nowcast-panel">
-        <div class="panel-header">
-          <div>
-            <p class="panel-label">PREDICTION HORIZON</p>
-            <h2>6-Hour Convective Nowcast</h2>
-          </div>
-
-          <div class="model-status">
-            MODEL STATUS
-            <strong>● ACTIVE</strong>
-          </div>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item current">
-            <div class="time-label">NOW</div>
 
-            <div class="mini-map">
-              <div class="mini-storm s1"></div>
+        <div class="panel nowcast-panel">
+
+            <div class="timeline">
+
+
+                <div class="forecast-hour active">
+
+                    <span class="time">
+                        NOW
+                    </span>
+
+                    <div class="forecast-line"></div>
+
+                    <strong>
+                        SEVERE
+                    </strong>
+
+                    <small>
+                        Thunderstorm
+                    </small>
+
+                </div>
+
+
+                <div class="forecast-hour">
+
+                    <span class="time">
+                        +1 HR
+                    </span>
+
+                    <div class="forecast-line"></div>
+
+                    <strong>
+                        SEVERE
+                    </strong>
+
+                    <small>
+                        Heavy Rain
+                    </small>
+
+                </div>
+
+
+                <div class="forecast-hour">
+
+                    <span class="time">
+                        +2 HR
+                    </span>
+
+                    <div class="forecast-line"></div>
+
+                    <strong>
+                        MODERATE
+                    </strong>
+
+                    <small>
+                        Rainfall
+                    </small>
+
+                </div>
+
+
+                <div class="forecast-hour">
+
+                    <span class="time">
+                        +3 HR
+                    </span>
+
+                    <div class="forecast-line"></div>
+
+                    <strong>
+                        MODERATE
+                    </strong>
+
+                    <small>
+                        Thunderstorm
+                    </small>
+
+                </div>
+
+
+                <div class="forecast-hour">
+
+                    <span class="time">
+                        +6 HR
+                    </span>
+
+                    <div class="forecast-line"></div>
+
+                    <strong>
+                        LOW
+                    </strong>
+
+                    <small>
+                        Weak Activity
+                    </small>
+
+                </div>
+
+
             </div>
 
-            <h3>42.8 mm/hr</h3>
-
-            <p>Severe</p>
-          </div>
-
-          <div class="arrow">→</div>
-
-          <div class="timeline-item">
-            <div class="time-label">+1 HR</div>
-
-            <div class="mini-map">
-              <div class="mini-storm s2"></div>
-            </div>
-
-            <h3>51.2 mm/hr</h3>
-
-            <p>Severe</p>
-          </div>
-
-          <div class="arrow">→</div>
-
-          <div class="timeline-item">
-            <div class="time-label">+2 HR</div>
-
-            <div class="mini-map">
-              <div class="mini-storm s3"></div>
-            </div>
-
-            <h3>47.6 mm/hr</h3>
-
-            <p>High</p>
-          </div>
-
-          <div class="arrow">→</div>
-
-          <div class="timeline-item">
-            <div class="time-label">+3 HR</div>
-
-            <div class="mini-map">
-              <div class="mini-storm s4"></div>
-            </div>
-
-            <h3>39.1 mm/hr</h3>
-
-            <p>High</p>
-          </div>
-
-          <div class="arrow">→</div>
-
-          <div class="timeline-item">
-            <div class="time-label">+6 HR</div>
-
-            <div class="mini-map">
-              <div class="mini-storm s5"></div>
-            </div>
-
-            <h3>18.4 mm/hr</h3>
-
-            <p>Moderate</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- HAZARDS -->
-
-      <section class="hazard-section">
-        <div class="section-title">
-          <div>
-            <p class="panel-label">HAZARD ANALYSIS</p>
-            <h2>Predicted Hazards</h2>
-          </div>
-
-          <p>AI-derived probability estimates</p>
-        </div>
-
-        <div class="hazard-grid">
-          <div class="hazard-card">
-            <div class="hazard-top">
-              <div class="hazard-icon">⚡</div>
-
-              <span class="badge severe"> HIGH </span>
-            </div>
-
-            <h3>Thunderstorm</h3>
-
-            <div class="probability">
-              <strong>87%</strong>
-              <div class="progress">
-                <div style="width: 87%"></div>
-              </div>
-            </div>
-
-            <p>Strong convective cells detected.</p>
-          </div>
-
-          <div class="hazard-card">
-            <div class="hazard-top">
-              <div class="hazard-icon">🧊</div>
-
-              <span class="badge moderate"> MODERATE </span>
-            </div>
-
-            <h3>Hail</h3>
-
-            <div class="probability">
-              <strong>64%</strong>
-              <div class="progress">
-                <div style="width: 64%"></div>
-              </div>
-            </div>
-
-            <p>Hail formation possible in intense cells.</p>
-          </div>
-
-          <div class="hazard-card">
-            <div class="hazard-top">
-              <div class="hazard-icon">🌧️</div>
-
-              <span class="badge severe"> HIGH </span>
-            </div>
-
-            <h3>Cloudburst</h3>
-
-            <div class="probability">
-              <strong>79%</strong>
-              <div class="progress">
-                <div style="width: 79%"></div>
-              </div>
-            </div>
-
-            <p>Localized extreme rainfall possible.</p>
-          </div>
-
-          <div class="hazard-card">
-            <div class="hazard-top">
-              <div class="hazard-icon">💨</div>
-
-              <span class="badge low"> LOW </span>
-            </div>
-
-            <h3>Downburst Wind</h3>
-
-            <div class="probability">
-              <strong>31%</strong>
-              <div class="progress">
-                <div style="width: 31%"></div>
-              </div>
-            </div>
-
-            <p>Strong localized wind gusts possible.</p>
-          </div>
-        </div>
-      </section>
-      <!-- FAQ SECTION -->
-
-      <section class="faq-section">
-        <div class="section-title faq-heading">
-          <div>
-            <p class="panel-label">KNOW THE SYSTEM</p>
-            <h2>Frequently Asked Questions</h2>
-          </div>
-
-          <p>Understanding StormCast India</p>
         </div>
 
-        <div class="faq-container">
-          <!-- FAQ 1 -->
+    </section>
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> What is convective-scale nowcasting? </span>
 
-              <span class="faq-icon">+</span>
-            </button>
+    <!-- =====================================================
+         PREDICTED HAZARDS
+    ====================================================== -->
 
-            <div class="faq-answer">
-              <p>
-                Convective-scale nowcasting is the prediction of rapidly
-                developing weather phenomena such as thunderstorms, intense
-                rainfall, hail and strong winds over the next few hours using
-                high-resolution atmospheric and observational data.
-              </p>
+    <section class="hazards-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    HAZARD ANALYSIS
+                </span>
+
+                <h2>
+                    Predicted Hazards
+                </h2>
+
             </div>
-          </div>
 
-          <!-- FAQ 2 -->
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>
-                How far ahead can StormCast predict weather hazards?
-              </span>
-
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              <p>
-                StormCast is designed to provide short-term convective forecasts
-                with a prediction horizon of up to 6 hours. The system
-                continuously updates its predictions as new observations become
-                available.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> What weather hazards can the system detect? </span>
-
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              <p>
-                The system focuses on high-impact convective hazards including
-                severe thunderstorms, extreme rainfall, cloudbursts, hail and
-                strong downburst winds.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> What data is used for prediction? </span>
-
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              <p>
-                The proposed system can combine multiple sources including
-                weather radar, satellite observations, rainfall measurements and
-                numerical weather prediction data to generate high-resolution
-                short-term forecasts.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> How are weather alerts generated? </span>
-
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              <p>
-                The prediction system estimates the probability and intensity of
-                different hazards. When predicted conditions cross predefined
-                risk thresholds, corresponding warnings can be generated for
-                affected regions.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span> Who can use the StormCast system? </span>
-
-              <span class="faq-icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-              <p>
-                The platform is intended to support disaster management
-                authorities, weather agencies, emergency response teams,
-                infrastructure operators and the public by providing localized
-                short-term hazard information.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- FOOTER -->
 
-      <footer>
+        <div class="hazards-grid">
+
+
+            <div class="hazard-card">
+
+                <div class="hazard-card-top">
+
+                    <span>
+                        THUNDERSTORM
+                    </span>
+
+                    <strong>
+                        87%
+                    </strong>
+
+                </div>
+
+                <h3>
+                    Severe
+                </h3>
+
+                <p>
+                    High convective potential detected.
+                </p>
+
+                <div class="hazard-progress">
+                    <div style="width: 87%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="hazard-card">
+
+                <div class="hazard-card-top">
+
+                    <span>
+                        HEAVY RAIN
+                    </span>
+
+                    <strong>
+                        82%
+                    </strong>
+
+                </div>
+
+                <h3>
+                    High
+                </h3>
+
+                <p>
+                    Significant rainfall accumulation expected.
+                </p>
+
+                <div class="hazard-progress">
+                    <div style="width: 82%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="hazard-card">
+
+                <div class="hazard-card-top">
+
+                    <span>
+                        HAIL
+                    </span>
+
+                    <strong>
+                        54%
+                    </strong>
+
+                </div>
+
+                <h3>
+                    Moderate
+                </h3>
+
+                <p>
+                    Localized hail development possible.
+                </p>
+
+                <div class="hazard-progress">
+                    <div style="width: 54%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="hazard-card">
+
+                <div class="hazard-card-top">
+
+                    <span>
+                        DOWNBURST
+                    </span>
+
+                    <strong>
+                        41%
+                    </strong>
+
+                </div>
+
+                <h3>
+                    Moderate
+                </h3>
+
+                <p>
+                    Localized strong wind activity possible.
+                </p>
+
+                <div class="hazard-progress">
+                    <div style="width: 41%;"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="faq-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    SYSTEM INFORMATION
+                </span>
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        What is convective nowcasting?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Convective nowcasting focuses on predicting
+                        rapidly developing weather hazards such as
+                        thunderstorms and intense rainfall over the
+                        next few hours.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        What hazards can StormCast detect?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        The system is designed to monitor thunderstorms,
+                        hail, cloudbursts, heavy rainfall and strong
+                        convective winds.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        What is the prediction window?
+                    </span>
+
+                    <span>
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        StormCast focuses on short-term prediction
+                        with a nowcasting horizon of up to six hours.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
         <div>
-          <strong>StormCast India</strong>
-          <span>•</span>
-          Convective Scale Nowcasting
+            <strong>
+                StormCast India
+            </strong>
+
+            <span>
+                Convective Nowcasting System
+            </span>
         </div>
 
-        <div>Prototype Interface • Internal Evaluation</div>
-      </footer>
-    </main>
+        <p>
+            Prototype interface for short-term severe weather intelligence.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
 
     <script src="script.js"></script>
-  </body>
+
+</body>
+
 </html>
