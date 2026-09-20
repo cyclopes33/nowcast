@@ -58,3 +58,30 @@ setInterval(() => {
         `${value} <span>mm/hr</span>`;
 
 }, 4000);
+// ===============================
+// FAQ ACCORDION
+// ===============================
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+
+        // Close other FAQ items
+        faqItems.forEach(otherItem => {
+
+            if (otherItem !== item) {
+                otherItem.classList.remove("active");
+            }
+
+        });
+
+        // Toggle current FAQ
+        item.classList.toggle("active");
+
+    });
+
+});
